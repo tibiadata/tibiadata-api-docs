@@ -6,7 +6,7 @@ The documentation is available on [docs.tibiadata.com](https://docs.tibiadata.co
 
 ## What's inside
 
-This repo contains the swagger files generated in the [tibiadata-api-go](https://github.com/TibiaData/tibiadata-api-go) repo.
+This repo contains the swagger files generated in the [tibiadata-api-go](https://github.com/tibiadata/tibiadata-api-go) repo.
 
 The original swagger-file can be found on the release page of the version you are looking for.
 
@@ -16,5 +16,5 @@ Tibia is a registered trademark of [CipSoft GmbH](https://www.cipsoft.com/en/). 
 
 ## Credits
 
-- Authors: [Tobias Lindberg](https://github.com/tobiasehlert) – [List of contributors](https://github.com/TibiaData/tibiadata-api-docs/graphs/contributors)
+- Authors: [Tobias Lindberg](https://github.com/tobiasehlert) – [List of contributors](https://github.com/tibiadata/tibiadata-api-docs/graphs/contributors)
 - Distributed under [MIT License](LICENSE)

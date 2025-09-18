@@ -14,7 +14,7 @@
     },
     "license": {
       "name": "MIT",
-      "url": "https://github.com/TibiaData/tibiadata-api-go/blob/main/LICENSE"
+      "url": "https://github.com/tibiadata/tibiadata-api-go/blob/main/LICENSE"
     },
     "version": "edge"
   },

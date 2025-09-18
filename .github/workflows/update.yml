@@ -18,7 +18,7 @@ jobs:
       - name: Download swagger.json from tibiadata-api-go release
         uses: robinraju/release-downloader@daf26c55d821e836577a15f77d86ddc078948b05 #v1.12
         with:
-          repository: TibiaData/tibiadata-api-go
+          repository: tibiadata/tibiadata-api-go
           tag: ${{ github.event.client_payload.tag_name }}
           fileName: swagger.json
           out-file-path: docs
