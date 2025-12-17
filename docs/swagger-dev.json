@@ -1059,7 +1059,9 @@
               "shielding",
               "swordfighting",
               "dromescore",
-              "bosspoints"
+              "bosspoints",
+              "bountypoints",
+              "weeklytasks"
             ],
             "type": "string",
             "default": "experience",

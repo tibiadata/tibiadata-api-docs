@@ -16,7 +16,7 @@
       "name": "MIT",
       "url": "https://github.com/tibiadata/tibiadata-api-go/blob/main/LICENSE"
     },
-    "version": "v4.6.0"
+    "version": "v4.7.0"
   },
   "host": "api.tibiadata.com",
   "basePath": "/",
@@ -1059,7 +1059,9 @@
               "shielding",
               "swordfighting",
               "dromescore",
-              "bosspoints"
+              "bosspoints",
+              "bountypoints",
+              "weeklytasks"
             ],
             "type": "string",
             "default": "experience",
