@@ -16,7 +16,7 @@
       "name": "MIT",
       "url": "https://github.com/tibiadata/tibiadata-api-go/blob/main/LICENSE"
     },
-    "version": "v4.9.0"
+    "version": "v4.10.0"
   },
   "host": "api.tibiadata.com",
   "basePath": "/",
@@ -1061,7 +1061,8 @@
               "dromescore",
               "bosspoints",
               "bountypoints",
-              "weeklytasks"
+              "weeklytasks",
+              "phosphorusrecord"
             ],
             "type": "string",
             "default": "experience",

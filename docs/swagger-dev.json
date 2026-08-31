@@ -1061,7 +1061,8 @@
               "dromescore",
               "bosspoints",
               "bountypoints",
-              "weeklytasks"
+              "weeklytasks",
+              "phosphorusrecord"
             ],
             "type": "string",
             "default": "experience",
