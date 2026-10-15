@@ -269,7 +269,10 @@
               "shielding",
               "swordfighting",
               "dromescore",
-              "bosspoints"
+              "bosspoints",
+              "bountypoints",
+              "weeklytasks",
+              "phosphorusrecord"
             ],
             "type": "string",
             "default": "experience",
@@ -713,20 +716,8 @@
               "$ref": "#/definitions/main.BoostableBossesOverviewResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -776,8 +767,8 @@
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -827,8 +818,8 @@
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -856,20 +847,8 @@
               "$ref": "#/definitions/main.CreaturesOverviewResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -897,20 +876,8 @@
               "$ref": "#/definitions/main.FansitesResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -960,8 +927,8 @@
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -999,20 +966,14 @@
               "$ref": "#/definitions/main.GuildsOverviewResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
           "404": {
             "description": "Not Found",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1119,8 +1080,8 @@
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1178,8 +1139,8 @@
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1225,20 +1186,14 @@
               "$ref": "#/definitions/main.HousesOverviewResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
           "404": {
             "description": "Not Found",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1276,20 +1231,14 @@
               "$ref": "#/definitions/main.KillStatisticsResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
           "404": {
             "description": "Not Found",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1317,20 +1266,8 @@
               "$ref": "#/definitions/main.NewsListResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1376,14 +1313,8 @@
               "$ref": "#/definitions/main.Information"
             }
           },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1427,14 +1358,8 @@
               "$ref": "#/definitions/main.Information"
             }
           },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1462,20 +1387,8 @@
               "$ref": "#/definitions/main.NewsListResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1503,20 +1416,8 @@
               "$ref": "#/definitions/main.NewsListResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1566,8 +1467,8 @@
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1595,20 +1496,8 @@
               "$ref": "#/definitions/main.SpellsOverviewResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1646,20 +1535,14 @@
               "$ref": "#/definitions/main.WorldResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
           "404": {
             "description": "Not Found",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
           },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -1687,20 +1570,8 @@
               "$ref": "#/definitions/main.WorldsOverviewResponse"
             }
           },
-          "400": {
-            "description": "Bad Request",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/main.Information"
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
+          "502": {
+            "description": "Bad Gateway",
             "schema": {
               "$ref": "#/definitions/main.Information"
             }
@@ -2732,8 +2603,12 @@
           "type": "string"
         },
         "type": {
-          "description": "The type of home. (house or guildhall)",
-          "type": "string"
+          "description": "The type of home.",
+          "type": "string",
+          "enum": [
+            "house",
+            "guildhall"
+          ]
         },
         "world": {
           "description": "The name of the world the house/guildhall belongs to.",
