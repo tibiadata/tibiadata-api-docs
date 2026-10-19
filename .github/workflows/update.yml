@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Download swagger.json from tibiadata-api-go release
-        uses: robinraju/release-downloader@28fc21f50d76778e7023361aa1f863e717d3d56f #v1.13
+        uses: robinraju/release-downloader@28fc21f50d76778e7023361aa1f863e717d3d56f # v1.13
         with:
           repository: tibiadata/tibiadata-api-go
           tag: ${{ github.event.client_payload.tag_name }}
@@ -43,7 +43,7 @@ jobs:
           echo "${contents}" > docs/swagger-dev.json
 
       - name: Commit docs/swagger files to repo
-        uses: EndBug/add-and-commit@cc9c08ba6c8df3b93a8f2db63e89b98368ae2ae8 #v11.1.1
+        uses: EndBug/add-and-commit@cc9c08ba6c8df3b93a8f2db63e89b98368ae2ae8 # v11.1.1
         with:
           add: docs/swagger.json docs/swagger-dev.json
           message: automatic update of docs/swagger files (release ${{ github.event.client_payload.tag_name }})
@@ -53,6 +53,6 @@ jobs:
     needs: update
     steps:
       - name: Trigger github-pages workflow
-        uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 #v4.0.1
+        uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 # v4.0.1
         with:
           event-type: tibiadata-api-docs-deploy
