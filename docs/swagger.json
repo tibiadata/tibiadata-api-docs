@@ -293,7 +293,7 @@
             ],
             "type": "string",
             "default": "all",
-            "x-example": "knights",
+            "x-example": "all",
             "description": "The vocation",
             "name": "vocation",
             "in": "path",
@@ -1044,7 +1044,7 @@
             ],
             "type": "string",
             "default": "all",
-            "x-example": "knights",
+            "x-example": "all",
             "description": "The vocation",
             "name": "vocation",
             "in": "path",
@@ -1949,6 +1949,15 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/main.HighscoresResponse"
+            }
+          },
+          "301": {
+            "description": "Permanent redirect to the canonical category URL",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "Canonical category URL"
+              }
             }
           },
           "400": {
