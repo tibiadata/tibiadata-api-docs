@@ -1951,6 +1951,15 @@
               "$ref": "#/definitions/main.HighscoresResponse"
             }
           },
+          "301": {
+            "description": "Permanent redirect to the canonical category URL",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "Canonical category URL"
+              }
+            }
+          },
           "400": {
             "description": "Bad Request",
             "schema": {
