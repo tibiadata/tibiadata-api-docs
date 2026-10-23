@@ -16,7 +16,7 @@
       "name": "MIT",
       "url": "https://github.com/tibiadata/tibiadata-api-go/blob/main/LICENSE"
     },
-    "version": "v4.10.0"
+    "version": "v5.0.0"
   },
   "host": "api.tibiadata.com",
   "basePath": "/",
@@ -983,7 +983,7 @@
     },
     "/v4/highscores/{world}/{category}/{vocation}/{page}": {
       "get": {
-        "description": "Show all highscores of tibia\nIn restriction mode, the valid vocation option is all.",
+        "description": "Show all highscores of tibia",
         "consumes": [
           "application/json"
         ],
@@ -1044,7 +1044,7 @@
             ],
             "type": "string",
             "default": "all",
-            "x-example": "all",
+            "x-example": "knights",
             "description": "The vocation",
             "name": "vocation",
             "in": "path",
@@ -1551,6 +1551,889 @@
       }
     },
     "/v4/worlds": {
+      "get": {
+        "description": "Show all worlds of Tibia",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "worlds"
+        ],
+        "summary": "List of all worlds",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.WorldsOverviewResponse"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/boostablebosses": {
+      "get": {
+        "description": "Show all boostable bosses listed",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "boostable bosses"
+        ],
+        "summary": "List of boostable bosses",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.BoostableBossesOverviewResponse"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/character/{name}": {
+      "get": {
+        "description": "Show all information about one character available",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "characters"
+        ],
+        "summary": "Show one character",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "Trollefar",
+            "description": "The character name",
+            "name": "name",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.CharacterResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/creature/{race}": {
+      "get": {
+        "description": "Show all information about one creature",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "creatures"
+        ],
+        "summary": "Show one creature",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "nightmare",
+            "description": "The race of creature",
+            "name": "race",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.CreatureResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/creatures": {
+      "get": {
+        "description": "Show all creatures listed",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "creatures"
+        ],
+        "summary": "List of creatures",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.CreaturesOverviewResponse"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/fansites": {
+      "get": {
+        "description": "List of all promoted and supported fansites",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "fansites"
+        ],
+        "summary": "Promoted and supported fansites",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.FansitesResponse"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/guild/{name}": {
+      "get": {
+        "description": "Show all information about one guild",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "guilds"
+        ],
+        "summary": "Show one guild",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "Elysium",
+            "description": "The name of guild",
+            "name": "name",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.GuildResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/guilds/{world}": {
+      "get": {
+        "description": "Show all guilds on a certain world",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "guilds"
+        ],
+        "summary": "List all guilds from a world",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "Antica",
+            "description": "The world",
+            "name": "world",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.GuildsOverviewResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/highscores/{world}/{category}/{vocation}/{page}": {
+      "get": {
+        "description": "Show all highscores of tibia\nIn restriction mode, the valid vocation option is all.\nCategory aliases and case variants (e.g. magic or MagicLevel) are redirected with 301 to the canonical lowercase category name. Unknown categories return 404 with error 11004.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "highscores"
+        ],
+        "summary": "Highscores of tibia",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "all",
+            "x-example": "Antica",
+            "description": "The world",
+            "name": "world",
+            "in": "path",
+            "required": true
+          },
+          {
+            "enum": [
+              "achievements",
+              "axefighting",
+              "charmpoints",
+              "clubfighting",
+              "distancefighting",
+              "experience",
+              "fishing",
+              "fistfighting",
+              "goshnarstaint",
+              "loyaltypoints",
+              "magiclevel",
+              "shielding",
+              "swordfighting",
+              "dromescore",
+              "bosspoints",
+              "bountypoints",
+              "weeklytasks",
+              "phosphorusrecord"
+            ],
+            "type": "string",
+            "default": "experience",
+            "x-example": "fishing",
+            "description": "The category",
+            "name": "category",
+            "in": "path",
+            "required": true
+          },
+          {
+            "enum": [
+              "all",
+              "knights",
+              "paladins",
+              "sorcerers",
+              "druids",
+              "monks"
+            ],
+            "type": "string",
+            "default": "all",
+            "x-example": "all",
+            "description": "The vocation",
+            "name": "vocation",
+            "in": "path",
+            "required": true
+          },
+          {
+            "minimum": 1,
+            "type": "integer",
+            "default": 1,
+            "x-example": "1",
+            "description": "The current page",
+            "name": "page",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.HighscoresResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/house/{world}/{house_id}": {
+      "get": {
+        "description": "Show all information about one house",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "houses"
+        ],
+        "summary": "House view",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "Antica",
+            "description": "The world to show",
+            "name": "world",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "x-example": "35019",
+            "description": "The ID of the house",
+            "name": "house_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.HouseResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/houses/{world}/{town}": {
+      "get": {
+        "description": "Show all houses filtered on world and town",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "houses"
+        ],
+        "summary": "List of houses",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "Antica",
+            "description": "The world to show",
+            "name": "world",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "string",
+            "x-example": "Venore",
+            "description": "The town to show",
+            "name": "town",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.HousesOverviewResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/killstatistics/{world}": {
+      "get": {
+        "description": "Show all killstatistics filtered on world",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "killstatistics"
+        ],
+        "summary": "The killstatistics",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "Antica",
+            "description": "The world to show",
+            "name": "world",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.KillStatisticsResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/news/archive": {
+      "get": {
+        "description": "Show news archive with a filtering on 90 days",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "news"
+        ],
+        "summary": "Show news archive (90 days)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.NewsListResponse"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/news/archive/{days}": {
+      "get": {
+        "description": "Show news archive with a filtering option on days",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "news"
+        ],
+        "summary": "Show news archive (with days filter)",
+        "parameters": [
+          {
+            "minimum": 1,
+            "type": "integer",
+            "default": 90,
+            "x-example": "30",
+            "description": "The number of days to show",
+            "name": "days",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.NewsListResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/news/id/{news_id}": {
+      "get": {
+        "description": "Show one news entry",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "news"
+        ],
+        "summary": "Show one news entry",
+        "parameters": [
+          {
+            "type": "integer",
+            "x-example": "6512",
+            "description": "The ID of news entry",
+            "name": "news_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.NewsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/news/latest": {
+      "get": {
+        "description": "Show newslist with filtering on articles and news of last 90 days",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "news"
+        ],
+        "summary": "Show newslist (90 days)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.NewsListResponse"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/news/newsticker": {
+      "get": {
+        "description": "Show news of type news tickers of last 90 days",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "news"
+        ],
+        "summary": "Show news tickers (90 days)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.NewsListResponse"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/spell/{spell_id}": {
+      "get": {
+        "description": "Show all information about one spell",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "spells"
+        ],
+        "summary": "Show one spell",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "stronghaste",
+            "description": "The name of spell",
+            "name": "spell_id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.SpellInformationResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/spells": {
+      "get": {
+        "description": "Show all spells",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "spells"
+        ],
+        "summary": "List all spells",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.SpellsOverviewResponse"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/world/{name}": {
+      "get": {
+        "description": "Show all information about one world",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "worlds"
+        ],
+        "summary": "Show one world",
+        "parameters": [
+          {
+            "type": "string",
+            "x-example": "Antica",
+            "description": "The name of world",
+            "name": "name",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/main.WorldResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "schema": {
+              "$ref": "#/definitions/main.Information"
+            }
+          }
+        }
+      }
+    },
+    "/v5/worlds": {
       "get": {
         "description": "Show all worlds of Tibia",
         "consumes": [

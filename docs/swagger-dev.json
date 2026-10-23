@@ -1866,7 +1866,7 @@
     },
     "/v5/highscores/{world}/{category}/{vocation}/{page}": {
       "get": {
-        "description": "Show all highscores of tibia\nIn restriction mode, the valid vocation option is all.",
+        "description": "Show all highscores of tibia\nIn restriction mode, the valid vocation option is all.\nCategory aliases and case variants (e.g. magic or MagicLevel) are redirected with 301 to the canonical lowercase category name. Unknown categories return 404 with error 11004.",
         "consumes": [
           "application/json"
         ],
