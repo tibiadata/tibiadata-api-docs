@@ -16,7 +16,7 @@
       "name": "MIT",
       "url": "https://github.com/tibiadata/tibiadata-api-go/blob/main/LICENSE"
     },
-    "version": "v5.0.0"
+    "version": "v5.1.0"
   },
   "host": "api.tibiadata.com",
   "basePath": "/",
@@ -293,7 +293,7 @@
             ],
             "type": "string",
             "default": "all",
-            "x-example": "all",
+            "x-example": "knights",
             "description": "The vocation",
             "name": "vocation",
             "in": "path",
@@ -1044,7 +1044,7 @@
             ],
             "type": "string",
             "default": "all",
-            "x-example": "all",
+            "x-example": "knights",
             "description": "The vocation",
             "name": "vocation",
             "in": "path",
